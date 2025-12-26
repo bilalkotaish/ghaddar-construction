@@ -1,0 +1,187 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: transform var(--transition-base);
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+    color: var(--color-text-primary);
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-main {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-primary);
+}
+
+.logo-sub {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-primary);
+    letter-spacing: 0.5px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    padding: var(--spacing-sm) 0;
+    transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-primary);
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    transition: color var(--transition-fast);
+}
+
+.navbar-toggle:hover {
+    color: var(--color-primary);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(10px);
+        padding: var(--spacing-xl);
+        gap: var(--spacing-lg);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+    }
+
+    .navbar-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-md) 0;
+    }
+
+    .logo-main {
+        font-size: 1.15rem;
+    }
+
+    .logo-sub {
+        font-size: 0.7rem;
+        white-space: nowrap;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+}
+
+.navbar-logo img {
+    max-width: 80%;
+    /* Ensures it doesn't exceed its container's width */
+    height: auto;
+    /* Maintains aspect ratio */
+    max-height: 80px;
+    /* Sets a maximum height for desktop (adjust as needed) */
+    width: auto;
+    /* Allows width to scale with height */
+    object-fit: contain;
+    /* Prevents distortion if needed */
+}
+
+/* Mobile Styles (up to 767px) */
+@media (max-width: 767px) {
+    .navbar-logo img {
+        max-height: 60px;
+        /* Smaller on mobile for better fit */
+    }
+}
+
+/* Tablet Styles (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar-logo img {
+        max-height: 70px;
+        /* Medium size for tablets */
+    }
+}

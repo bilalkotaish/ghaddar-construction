@@ -1,0 +1,31 @@
+.services-page,
+.projects-page,
+.about-page,
+.contact-page {
+    padding-top: 70px;
+    min-height: 100vh;
+}
+
+.page-header {
+    background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-tertiary));
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.page-title {
+    font-size: var(--font-size-5xl);
+    font-weight: 900;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-description {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
