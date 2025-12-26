@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaHardHat } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 import logoImage from '../assets/generallogo.png'; // Adjust path if needed (e.g., './assets/generallogo.png')
 const Navbar = () => {
